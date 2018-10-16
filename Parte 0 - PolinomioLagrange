@@ -1,0 +1,11 @@
+def PolinomioLagrange(x, y, z):
+    m = len(x)
+    soma = 0
+    for i in range(m):
+        prod = y[i]
+        for j in range(m):
+            if j != i:
+                prod *= (z-x[j])/(x[i]-x[j])
+        soma += prod
+        
+    return soma
